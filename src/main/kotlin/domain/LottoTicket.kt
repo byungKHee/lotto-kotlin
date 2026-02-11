@@ -10,4 +10,8 @@ class LottoTicket(var lottoNumbers: List<LottoNumber>) {
             "로또 티켓은 중복된 숫자를 가질 수 없습니다."
         }
     }
+
+    operator fun contains(lottoNumber: LottoNumber): Boolean {
+        return this.lottoNumbers.contains(lottoNumber)
+    }
 }
