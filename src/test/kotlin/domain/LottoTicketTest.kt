@@ -1,7 +1,9 @@
 package domain
 
+import org.example.domain.LottoFactory
 import org.example.domain.LottoNumber
 import org.example.domain.LottoTicket
+import org.example.domain.ManualLottoGenerator
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -42,5 +44,15 @@ class LottoTicketTest {
         assertThrows<IllegalArgumentException> {
             LottoTicket(lottoNumbers)
         }
+    }
+
+    @Test
+    @DisplayName("두 개의 로또를 비교하여 일치하는 번호의 개수를 셀 수 있다.")
+    fun compare_lotto_tickets() {
+        val lottoTicket1 = LottoFactory(ManualLottoGenerator(listOf(1,2,3,4,5,6))).generate()
+        val lottoTicket2 = LottoFactory(ManualLottoGenerator(listOf(1,2,3,7,8,9))).generate()
+
+        val matchCount = lottoTicket1.countMatchingNumbers(lottoTicket2)
+        assert(matchCount == 3)
     }
 }

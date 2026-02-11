@@ -11,6 +11,10 @@ class LottoTicket(var lottoNumbers: List<LottoNumber>) {
         }
     }
 
+    fun countMatchingNumbers(other: LottoTicket): Int {
+        return this.lottoNumbers.count({it in other})
+    }
+
     operator fun contains(lottoNumber: LottoNumber): Boolean {
         return this.lottoNumbers.contains(lottoNumber)
     }
