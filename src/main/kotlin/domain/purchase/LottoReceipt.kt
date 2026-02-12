@@ -1,4 +1,6 @@
-package org.example.domain
+package org.example.domain.purchase
+
+import org.example.domain.money.Money
 
 class LottoReceipt (val money : Money, val autoCount : Int, val manualCount : Int) {
     init {

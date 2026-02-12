@@ -1,4 +1,4 @@
-package org.example.domain
+package org.example.domain.lotto
 
 data class LottoNumber(val value: Int) {
 

@@ -1,4 +1,4 @@
-package org.example.domain
+package org.example.domain.money
 
 data class Money(val amount: Long) {
 

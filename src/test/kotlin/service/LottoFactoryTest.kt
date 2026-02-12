@@ -1,8 +1,8 @@
-package domain
+package service
 
-import org.example.domain.AutoLottoGenerator
-import org.example.domain.LottoFactory
-import org.example.domain.ManualLottoGenerator
+import org.example.service.AutoLottoGenerator
+import org.example.service.LottoFactory
+import org.example.service.ManualLottoGenerator
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 

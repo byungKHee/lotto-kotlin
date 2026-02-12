@@ -1,6 +1,6 @@
-package domain
+package domain.lotto
 
-import org.example.domain.LottoNumber
+import org.example.domain.lotto.LottoNumber
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

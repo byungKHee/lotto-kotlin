@@ -1,4 +1,4 @@
-package org.example.domain
+package org.example.domain.lotto
 
 class LottoTicket(var lottoNumbers: List<LottoNumber>) {
 

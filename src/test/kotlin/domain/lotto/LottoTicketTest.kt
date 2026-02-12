@@ -1,9 +1,9 @@
-package domain
+package domain.lotto
 
-import org.example.domain.LottoFactory
-import org.example.domain.LottoNumber
-import org.example.domain.LottoTicket
-import org.example.domain.ManualLottoGenerator
+import org.example.service.LottoFactory
+import org.example.domain.lotto.LottoNumber
+import org.example.domain.lotto.LottoTicket
+import org.example.service.ManualLottoGenerator
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

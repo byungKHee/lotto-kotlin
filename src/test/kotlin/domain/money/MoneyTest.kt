@@ -1,6 +1,6 @@
-package domain
+package domain.money
 
-import org.example.domain.Money
+import org.example.domain.money.Money
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
@@ -11,14 +11,14 @@ class MoneyTest {
     fun create_valid_money() {
         assertDoesNotThrow {
             val money: Money = Money(5000)
-            val money_zero : Money = Money(0)
+            val money_zero: Money = Money(0)
         }
     }
 
     @Test
     fun create_invalid_money() {
         assertThrows<IllegalArgumentException> {
-            val money : Money = Money(-1000)
+            val money: Money = Money(-1000)
         }
     }
 

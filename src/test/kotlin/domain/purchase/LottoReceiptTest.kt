@@ -1,7 +1,7 @@
-package domain
+package domain.purchase
 
-import org.example.domain.LottoReceipt
-import org.example.domain.Money
+import org.example.domain.money.Money
+import org.example.domain.purchase.LottoReceipt
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
@@ -16,7 +16,7 @@ class LottoReceiptTest {
         val manualCount : Int = 8
 
         assertDoesNotThrow {
-            val lottoReceipt : LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
+            val lottoReceipt: LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
         }
     }
 
@@ -27,7 +27,7 @@ class LottoReceiptTest {
         val manualCount : Int = 0
 
         assertDoesNotThrow {
-            val lottoReceipt : LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
+            val lottoReceipt: LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
         }
     }
 
@@ -38,7 +38,7 @@ class LottoReceiptTest {
         val manualCount : Int = 2
 
         assertDoesNotThrow {
-            val lottoReceipt : LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
+            val lottoReceipt: LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
         }
     }
 
@@ -49,7 +49,7 @@ class LottoReceiptTest {
         val manualCount : Int = 2
 
         assertFailsWith<IllegalArgumentException> {
-            val lottoReceipt : LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
+            val lottoReceipt: LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
         }
     }
 
@@ -60,7 +60,7 @@ class LottoReceiptTest {
         val manualCount : Int = 6
 
         assertFailsWith<IllegalArgumentException> {
-            val lottoReceipt : LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
+            val lottoReceipt: LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
         }
     }
 
@@ -71,7 +71,7 @@ class LottoReceiptTest {
         val autoCount : Int = 3
         val manualCount : Int = 2
 
-        kotlin.test.assertFailsWith<IllegalArgumentException> {
+        assertFailsWith<IllegalArgumentException> {
             val lottoReceipt : LottoReceipt = LottoReceipt(totalPrice, autoCount, manualCount)
         }
     }
