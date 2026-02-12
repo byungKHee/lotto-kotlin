@@ -49,4 +49,55 @@ class MoneyTest {
 
         assert(resultMoney == Money(5000))
     }
+
+    @Test
+    fun multiply_money_objects() {
+        // valid case
+        val money: Money = Money(4000)
+        val resultMoney: Money = money * 3
+        assert(resultMoney == Money(12000))
+
+        // invalid case
+        assertThrows<IllegalArgumentException> {
+            val moneyInvalid: Money = Money(4000)
+            val resultMoneyInvalid: Money = moneyInvalid * -2
+        }
+    }
+
+    @Test
+    fun divide_money_objects() {
+        // valid case: Money 간의 나눗셈
+        val money: Money = Money(8000)
+        val resultMoney: Money = money / 4
+        assert(resultMoney == Money(2000))
+
+        // valid case: Money 와 Int 간의 나눗셈
+        val moneyDivInt: Money = Money(9000)
+        val resultMoneyDivInt: Money = moneyDivInt / 3
+        assert(resultMoneyDivInt == Money(3000))
+
+        // invalid case: division by zero
+        assertThrows<IllegalArgumentException> {
+            val moneyInvalid: Money = Money(8000)
+            val resultMoneyInvalid: Money = moneyInvalid / 0
+        }
+
+        // invalid case: division by negative number
+        assertThrows<IllegalArgumentException> {
+            val moneyInvalid: Money = Money(8000)
+            val resultMoneyInvalid: Money = moneyInvalid / -2
+        }
+
+        // invalid case: Money 간의 나눗셈에서 몫이 아닌 경우
+        assertThrows<IllegalArgumentException> {
+            val moneyInvalid: Money = Money(8500)
+            val resultMoneyInvalid: Money = moneyInvalid / 3
+        }
+
+        // invalid case: Money 와 Int 간의 나눗셈에서 몫이 아닌 경우
+        assertThrows<IllegalArgumentException> {
+            val moneyInvalid: Money = Money(8500)
+            val resultMoneyInvalid: Money = moneyInvalid / 7
+        }
+    }
 }
